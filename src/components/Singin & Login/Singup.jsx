@@ -4,6 +4,7 @@ import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store";
+import { data, useNavigate } from "react-router-dom";
 
 function Basic() {
     const dispatch = useDispatch(); // Fixed typo
@@ -15,6 +16,7 @@ function Basic() {
         email: "",
         password: ""
     });
+    const navigate = useNavigate();
 
     const sendRequest = async (type = "login") => {
         try {
@@ -40,19 +42,14 @@ function Basic() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Form submitted:", input);
-
         if (isSignUp) {
-            const data = await sendRequest("signup"); // Fixed typo
-            if (data) {
-                dispatch(authActions.login());
-                console.log("Signup Successful:", data);
-            }
+            sendRequest("singup")
+                .then(() => dispatch(authActions.login())).then(() => navigate("/blogs"))
+                .then((data) => console.log(data))
         } else {
-            const data = await sendRequest("login");
-            if (data) {
-                dispatch(authActions.login());
-                console.log("Login Successful:", data);
-            }
+            sendRequest()
+                .then(() => dispatch(authActions.login())).then(() => navigate("/blogs")) 
+                .then((data) => console.log(data))
         }
     };
 

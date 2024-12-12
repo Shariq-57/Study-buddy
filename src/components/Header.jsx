@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from '../store';
 
 
 
@@ -11,6 +12,7 @@ import { useSelector } from "react-redux";
 // };
 
 const Header = () => {
+  const dispath = useDispatch()
   const isLoggedIn = useSelector(state => state.isLoggedIn)
   return (
     <BrowserRouter>
@@ -39,7 +41,9 @@ const Header = () => {
               SingUp
             </Link>
           </>}
-          {isLoggedIn && <Link className=' bg-black text-white px-3 py-2 rounded-3xl text-lg' to="/auth" target='_parent'>
+          {isLoggedIn && <Link
+            onClick={() => dispath(authActions.logout()) }
+            className=' bg-black text-white px-3 py-2 rounded-3xl text-lg' to="/auth" target='_parent'>
             Log out
           </Link>}
         </div>

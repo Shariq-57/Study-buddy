@@ -2,14 +2,15 @@ import React from "react"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
+import Header from "./components/Header.jsx"
+import New_Component from './components/Sidebar.jsx'
 import AddBlog from "./components/AddBlog.jsx"
 import Auth from "./components/Auth.jsx"
 import BlogDetails from "./components/BlogDetails.jsx"
 import Blogs from "./components/Blogs.jsx"
-import Header from "./components/Header.jsx"
-import New_Component from './components/Sidebar.jsx'
 import UserBlogs from "./components/UserBlogs.jsx"
 import { useSelector } from "react-redux";
+import Blog from "./components/Blog.jsx";
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
           <New_Component />
         </div>
 
-        <div className="col-span-10 mt-20">
+        <div className="col-span-10 mt-24">
 
           <BrowserRouter>
             <Routes>
@@ -38,7 +39,8 @@ function App() {
               <Route path="/blogs/add" element={<AddBlog />} />
             </Routes>
           </BrowserRouter>
-
+          {/* <Blogs /> */}
+          {/* <Blog />  */}
           {/* <Routes>
               <Route path="/auth" element={<Auth />} />
               <Route path="/blogs" element={<Blogs />} />
