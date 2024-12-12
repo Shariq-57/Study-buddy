@@ -1,0 +1,100 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+td {
+    text-align: center;
+}
+
+button.edit, button.delete {
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+button.edit {
+    background-color: #ffa500;
+}
+
+button.edit:hover {
+    background-color: #e59400;
+}
+
+button.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+button.delete:hover {
+    background-color: #e41f22;
+}
+
+.reminder {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}

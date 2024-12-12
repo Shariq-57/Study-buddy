@@ -1,8 +1,14 @@
 import React from 'react'
+// import CourceBooks from './cource, books,studylist/CourceBooks'
+import Basic from './Singin & Login/Singup'
+
+
 
 function Auth() {
   return (
-    <div>Auth</div>
+    <div>
+      <Basic />
+    </div>
   )
 }
 
